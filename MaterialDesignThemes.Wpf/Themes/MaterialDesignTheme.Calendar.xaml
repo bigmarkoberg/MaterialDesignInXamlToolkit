@@ -2,7 +2,12 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"                    
                     xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf"
                     xmlns:converters="clr-namespace:MaterialDesignThemes.Wpf.Converters"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
                     xmlns:globalization="clr-namespace:System.Globalization;assembly=mscorlib">
+    <!-- Primary200Foreground Primary500Foreground Primary700Foreground-->
+    <SolidColorBrush x:Key="myLocalMidPrimaryColor" Color="{DynamicResource Primary500Foreground}" po:Freeze="True" />
+    <SolidColorBrush x:Key="myLocalLightPrimaryColor" Color="{DynamicResource Primary200Foreground}" po:Freeze="True" />
+    <SolidColorBrush x:Key="myLocalDarkPrimaryColor" Color="{DynamicResource Primary700Foreground}" po:Freeze="True"/>
     <Style x:Key="MaterialDesignCalendarButton" TargetType="{x:Type CalendarButton}">
         <Setter Property="MinWidth" Value="5"/>
         <Setter Property="MinHeight" Value="5"/>
@@ -50,7 +55,7 @@
                                     <Storyboard>
                                         <DoubleAnimation Duration="0" To=".75" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="SelectedBackground"/>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground)" Storyboard.TargetName="NormalText">
-                                            <DiscreteObjectKeyFrame Value="{DynamicResource PrimaryHueMidForegroundBrush}" KeyTime="0" />
+                                            <DiscreteObjectKeyFrame Value="{StaticResource myLocalMidPrimaryColor}" KeyTime="0" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -174,7 +179,7 @@
                                     <Storyboard>
                                         <DoubleAnimation Duration="0" To=".75" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="SelectedBackground"/>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground)" Storyboard.TargetName="NormalText">
-                                            <DiscreteObjectKeyFrame Value="{DynamicResource PrimaryHueMidForegroundBrush}" KeyTime="0" />
+                                            <DiscreteObjectKeyFrame Value="{StaticResource myLocalMidPrimaryColor}" KeyTime="0" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -222,7 +227,7 @@
                                     <Storyboard>
                                         <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="TodayBackground"/>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground)" Storyboard.TargetName="NormalText">
-                                            <DiscreteObjectKeyFrame Value="{DynamicResource PrimaryHueLightForegroundBrush}" KeyTime="0" />
+                                            <DiscreteObjectKeyFrame Value="{StaticResource myLocalLightPrimaryColor}" KeyTime="0" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
